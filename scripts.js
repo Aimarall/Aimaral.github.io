@@ -16,13 +16,10 @@
 // document.body.append(div);
 
 
-fetch("https://it-academy-proect-default-rtdb.firebaseio.com/people.com/chat.json", {
-    method: "POST",
-    body: JSON.stringify
-})
+
 
 let btn1 = document.querySelector('button')
-let name = document.querySelector('#name')
+let nameSelector = document.querySelector('#name')
 let massege = document.querySelector('#message')
 let color = document.querySelector('#color')
 let chat = document.querySelector('#chat')
@@ -34,7 +31,16 @@ btn1.addEventListener("mousedown", function () {
     div.append(span1)
     div.append(span2)
     chat.append(div)
-    span1.innerText = name.value + ": "
+    span1.innerText = nameSelector.value + ": "
     span2.innerText = massege.value
     span1.style.color = color.value
+    fetch("https://it-academy-proect-default-rtdb.firebaseio.com/chat.json", {
+    method: "POST",
+    body: JSON.stringify({
+        name: nameSelector.value,
+        massage: massege.value,
+        color: color.value
+    })
+
+})
 })

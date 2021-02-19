@@ -4,7 +4,7 @@
 // let button = document.querySelector('button');
 //   let div = document.querySelector('#chat');
 // button.addEventListener('click', function () {
-  
+
 //     let spanName = document.createElement('span');
 //     let spanMeassge = document.querySelector('span');
 //     div.append(spanName);
@@ -16,15 +16,18 @@
 // document.body.append(div);
 
 
-fetch('https://it-academy-proect-default-rtdb.firebaseio.com/people.com')
+fetch("https://it-academy-proect-default-rtdb.firebaseio.com/people.com/chat.json", {
+    method: "POST",
+    body: JSON.stringify
+})
 
-let btn1 = document.querySelector('#btn1')
+let btn1 = document.querySelector('button')
 let name = document.querySelector('#name')
-let massege = document.querySelector('#massage')
+let massege = document.querySelector('#message')
 let color = document.querySelector('#color')
 let chat = document.querySelector('#chat')
 
-btn1.addEventListener("mousedown", function(){
+btn1.addEventListener("mousedown", function () {
     let div = document.createElement('div')
     let span1 = document.createElement('span')
     let span2 = document.createElement('span')
